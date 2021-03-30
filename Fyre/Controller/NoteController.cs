@@ -118,14 +118,24 @@ namespace Fyre.Console.Controller
 
             var lists = NoteRepository.ReadAllNotesInList(thisList.ListId);
 
+            var cacheDate = "";
             foreach (var list in lists)
             {
+                var date = Helper.GetDate(list.CreatedDateTime);
+
+                if (date != cacheDate)
+                {
+                    System.Console.WriteLine("\n > " + date);
+                }
                 if (list.ListId == thisList.ListId)
                 {
-                    Print.Color("blue", "\n>>> >>> " + list.CreatedDateTime + " | ID: " + list.NoteId +
-                                        "\n>>> >>> " + list.Content + "\n");
+
+                    Print.Color("orange", "\n > " + list.NoteId);
+                    Print.Color("blue", list.Content);
                 }
             }
+
+            Print.Color("orange", "\n");
 
             ListController.Index(thisList);
 

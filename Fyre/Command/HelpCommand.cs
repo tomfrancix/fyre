@@ -23,8 +23,8 @@ namespace Fyre.Console.Command
             System.Console.WriteLine("view [list name] | Go to list. ");
             System.Console.WriteLine("create list      | Create a new list.");
                Print.Color("orange", "get news         | Scrape news.");
-               Print.Color("orange", "stocks           | Scrape news.");
-            Print.Color("orange", "create website      | Create a website.\n");
+               Print.Color("orange", "get stocks       | Scrape stock values.");
+               Print.Color("orange", "create website   | Create a website.\n");
         }
 
         /// <summary>

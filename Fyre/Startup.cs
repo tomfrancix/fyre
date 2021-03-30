@@ -81,11 +81,16 @@ namespace Fyre.Console
                         Command.ScraperNews.Execute();
                         Introduction();
                         break;
+                    case "get stocks":
+                        Command.GetStockPrices.Execute();
+                        Introduction();
+                        break;
                     default:
                         Navigate(input);
                         break;
                 }
             }
+            Introduction();
         }
 
         /// <summary>
